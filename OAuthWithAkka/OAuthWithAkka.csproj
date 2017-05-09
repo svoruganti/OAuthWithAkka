@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>4.5</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OAuthWithAkka.Actors\OAuthWithAkka.Actors.csproj">
+      <Project>{a0eb23cb-fbb5-43d5-9474-d371c2419fb2}</Project>
+      <Name>OAuthWithAkka.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OAuthWithAkka.Actors\OAuthWithAkka.Actors.csproj">
+      <Project>{a0eb23cb-fbb5-43d5-9474-d371c2419fb2}</Project>
+      <Name>OAuthWithAkka.Actors</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
