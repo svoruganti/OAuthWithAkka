@@ -102,7 +102,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ActorController.cs" />
     <Compile Include="Global.asax.cs" />
+    <Compile Include="Handlers\IOAuthUserCoordinatorHandler.cs" />
     <Compile Include="Handlers\IRequestActorHandler.cs" />
+    <Compile Include="Handlers\OAuthUserCoordinatorHandler.cs" />
     <Compile Include="Handlers\RequestActorHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -116,6 +118,10 @@
     <ProjectReference Include="..\OAuthWithAkka.Actors\OAuthWithAkka.Actors.csproj">
       <Project>{a0eb23cb-fbb5-43d5-9474-d371c2419fb2}</Project>
       <Name>OAuthWithAkka.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OAuthWithAkka.Messages\OAuthWithAkka.Messages.csproj">
+      <Project>{5BEAB4EB-0767-4561-9025-AD960A80C0C9}</Project>
+      <Name>OAuthWithAkka.Messages</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

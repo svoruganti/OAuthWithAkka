@@ -6,9 +6,9 @@ namespace OAuthWithAkka.Web.Controllers
     [RoutePrefix("actors")]
     public class ActorController : ApiController
     {
-        private readonly IRequestActorHandler _requestActorHandler;
+        private readonly IOAuthUserCoordinatorHandler _requestActorHandler;
 
-        public ActorController(IRequestActorHandler requestActorHandler)
+        public ActorController(IOAuthUserCoordinatorHandler requestActorHandler)
         {
             _requestActorHandler = requestActorHandler;
         }
@@ -16,7 +16,7 @@ namespace OAuthWithAkka.Web.Controllers
         [HttpGet, Route]
         public IHttpActionResult Get()
         {
-            return Ok(_requestActorHandler.GetMessage("Srini"));
+            return Ok(_requestActorHandler.GetToken());
         }
     }
 }

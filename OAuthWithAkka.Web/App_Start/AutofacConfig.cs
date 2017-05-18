@@ -28,7 +28,10 @@ namespace OAuthWithAkka.Web
         private static void RegisterHandlers(ContainerBuilder builder)
         {
             builder.RegisterType<RequestActorHandler>().As<IRequestActorHandler>().SingleInstance();
+            builder.RegisterType<OAuthUserCoordinatorHandler>().As<IOAuthUserCoordinatorHandler>().SingleInstance();
             builder.RegisterType<RequestActor>();
+            builder.RegisterType<OAuthUserCoordinator>();
+            builder.RegisterType<OAuthUser>();
         }
     }
 }
