@@ -17,7 +17,7 @@ namespace OAuthWithAkka.Actors
 
         private void Receives()
         {
-            Receive<LoginRequestMessage>(async x =>
+            Receive<LoginRequestMessage>(x =>
             {
                 var actorName = $"oAuthUser_{x.UserName}";
                 var actorSelection = Context.ActorSelection(Self, $"/{actorName}");
