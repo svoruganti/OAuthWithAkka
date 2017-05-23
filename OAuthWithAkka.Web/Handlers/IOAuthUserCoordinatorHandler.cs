@@ -5,6 +5,6 @@ namespace OAuthWithAkka.Web.Handlers
 {
     public interface IOAuthUserCoordinatorHandler
     {
-        Task<LoginResponseMessage> GetToken();
+        Task<LoginResponseMessage> GetToken(LoginRequestMessage message);
     }
 }

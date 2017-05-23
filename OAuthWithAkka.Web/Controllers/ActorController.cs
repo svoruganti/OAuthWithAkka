@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
+using OAuthWithAkka.Messages;
 using OAuthWithAkka.Web.Handlers;
 
 namespace OAuthWithAkka.Web.Controllers
@@ -13,10 +15,10 @@ namespace OAuthWithAkka.Web.Controllers
             _requestActorHandler = requestActorHandler;
         }
         // GET
-        [HttpGet, Route]
-        public IHttpActionResult Get()
+        [HttpGet, Route("{userName}")]
+        public async Task<IHttpActionResult> Get(string userName)
         {
-            return Ok(_requestActorHandler.GetToken());
+            return Ok(await _requestActorHandler.GetToken(new LoginRequestMessage(userName, "password")));
         }
     }
 }

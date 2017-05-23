@@ -14,8 +14,12 @@ namespace OAuthWithAkka.Actors
 
         private void Authenticating()
         {
-            _token = DateTime.Now.Ticks.ToString();
-            Become(Authencated);
+            Receive<LoginRequestMessage>(x =>
+            {
+                _token = DateTime.Now.Ticks.ToString();
+                Become(Authencated);
+                Sender.Tell(new LoginResponseMessage(_token));
+            });
         }
 
         private void Authencated()

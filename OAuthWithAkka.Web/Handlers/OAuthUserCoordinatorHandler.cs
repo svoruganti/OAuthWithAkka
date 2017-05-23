@@ -13,9 +13,9 @@ namespace OAuthWithAkka.Web.Handlers
         {
             _coordinator = actorSystem.ActorOf(actorSystem.DI().Props<OAuthUserCoordinator>(), "oAuthUserCoordinator");
         }
-        public  Task<LoginResponseMessage> GetToken()
+        public  Task<LoginResponseMessage> GetToken(LoginRequestMessage message)
         {
-            var response = _coordinator.Ask<LoginResponseMessage>(new LoginRequestMessage("testuser@test.com", "testpassword"));
+            var response = _coordinator.Ask<LoginResponseMessage>(message);
             return response;
         }
     }
